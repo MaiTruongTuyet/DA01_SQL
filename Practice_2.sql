@@ -5,6 +5,9 @@ WHERE ID % 2 = 0
 --EX 2
 SELECT COUNT(CITY) - COUNT(DISTINCT CITY)
 FROM STATION
+
+--EX 3
+
   
 --EX 4
 SELECT ROUND(((SUM(item_count * order_occurrences) / SUM(order_occurrences)):: NUMERIC),1)
@@ -34,5 +37,26 @@ FROM pharmacy_sales
 WHERE total_sales - (cogs) < 0
 GROUP BY manufacturer
 ORDER BY total_loss DESC
+--EX 9
+SELECT *
+FROM Cinema
+WHERE id % 2 != 0 and description != 'boring'
+ORDER BY rating DESC
 
+-- EX10
+SELECT teacher_id, count(distinct subject_id) as cnt
+FROM Teacher
+GROUP BY teacher_id 
+
+-- EX11
+SELECT user_id, COUNT(follower_id) AS followers_count
+FROM Followers
+GROUP BY user_id
+ORDER BY user_id
+
+--EX12
+SELECT class
+FROM Courses
+GROUP BY class
+HAVING count(student) >=5
 
