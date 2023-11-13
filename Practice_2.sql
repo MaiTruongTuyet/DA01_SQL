@@ -10,3 +10,9 @@ FROM STATION
 SELECT ROUND(((SUM(item_count * order_occurrences) / SUM(order_occurrences)):: NUMERIC),1)
 FROM items_per_order 
 
+--EX5
+SELECT DISTINCT candidate_id 
+FROM candidates
+WHERE SKILL in('Python','Tableau','PostgreSQL') 
+
+
