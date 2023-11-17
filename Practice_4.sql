@@ -12,7 +12,7 @@ GROUP BY device_type
 --EX2:
 SELECT X,Y,Z,
 CASE
-WHEN (X+Y ) > Z THEN 'Yes'
+WHEN (X+Y ) > Z and (Y+ Z) > X  and (x+z) > Y THEN 'Yes'
 ELSE 'No'
 END as triangle 
 FROM Triangle 
@@ -20,7 +20,7 @@ FROM Triangle
 --EX3:
 SELECT
   ROUND((SUM(CASE 
-    WHEN call_category IS NULL OR call_category = 'n/a' OR call_category = '' 
+    WHEN call_category IS NULL OR call_category = 'n/a' 
     THEN 1 ELSE 0 END)  / COUNT(*))*100, 1) AS Call_percentage
 FROM callers;
 
@@ -29,17 +29,9 @@ SELECT name FROM CUSTOMER
 WHERE referee_id  IS NULL or referee_id = 1
 
 --EX5:
-select 
-CASE 
-WHEN pclass = 1 THEN 'first_class'
-WHEN pclass = 2 THEN 'second_class'
-ELSE 'third_class'
-END AS CLASS,
-SUM(CASE
-WHEN survived =0 THEN 1
-END) AS non_survivors,
-SUM(CASE
-WHEN survived =1 THEN 1
-END) AS survivors
+select survived, 
+sum(case when pclass =1 then 1 else 0 end ) as first_class,
+sum(case when pclass =2 then 1 else 0 end ) as second_class,
+sum(case when pclass =3 then 1 else 0 end ) as third_class
 from titanic
-GROUP BY CLASS
+group by survived
