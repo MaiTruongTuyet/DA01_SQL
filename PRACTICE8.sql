@@ -14,4 +14,6 @@ WHERE first_order = 1
 SELECT ROUND(SUM(immediate) *100 / COUNT(first_order),2) as immediate_percentage
 FROM result
 
---Ex2 
+--Ex2 Game Play Analysis IV
+
+
