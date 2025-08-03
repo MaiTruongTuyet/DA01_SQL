@@ -21,6 +21,7 @@ tweet_bucket	users_num
 
 <img width="391" height="196" alt="image" src="https://github.com/user-attachments/assets/8901ee7d-b981-41fb-83c5-2a102132288c" />
 
+
 <img width="424" height="108" alt="image" src="https://github.com/user-attachments/assets/97180835-b8ee-434e-9a96-83e8f03ddfa7" />
 
 
